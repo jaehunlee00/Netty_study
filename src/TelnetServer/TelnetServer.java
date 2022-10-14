@@ -1,5 +1,5 @@
 package TelnetServer;
-
+// ver. Netty 4.1.68.Final
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;

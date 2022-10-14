@@ -1,5 +1,5 @@
 package TelnetServer;
-
+// ver. Netty 4.1.68.Final
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
@@ -10,10 +10,7 @@ import java.util.Date;
 
 @Sharable // 공유가능 상태 표시, 지정된 클래스를 채널 파이프라인에서 공유할 수 있음 (스레드 경합 없이 참조 가능)
 public class TelnetServerHandler extends SimpleChannelInboundHandler<String> {
-    public TelnetServerHandler() {
-    }
-
-    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+    public void channelActive(ChannelHandlerContext ctx) throws  Exception {
         ctx.write("Hi, " + InetAddress.getLocalHost().getHostName() + "\r\n");
         ctx.write("Current Time: " + new Date() + "\r\n");
         ctx.flush();
