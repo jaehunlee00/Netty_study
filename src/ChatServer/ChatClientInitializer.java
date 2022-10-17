@@ -7,8 +7,14 @@ import io.netty.handler.codec.DelimiterBasedFrameDecoder;
 import io.netty.handler.codec.Delimiters;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
+import io.netty.handler.ssl.SslContext;
 
 public class ChatClientInitializer extends ChannelInitializer<SocketChannel> {
+    private final SslContext sslCtx;
+
+    public ChatClientInitializer(SslContext sslCtx) {
+        this.sslCtx = sslCtx;
+    }
     @Override
     public void initChannel(SocketChannel ch) throws Exception {
         ChannelPipeline p = ch.pipeline();
